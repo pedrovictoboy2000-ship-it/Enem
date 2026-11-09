@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Resumo e Dicas para Exatas</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070f;--card:#0c1124;--card2:#121a38;--ink:#f5f7ff;--mute:#a9b3d6;--line:#232d5c;--ok:#3fd49a;--bad:#ee6a82;--c1:#5b8def;--c2:#e6a23c;--c3:#a46cef;--c4:#82d45e;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:90px}*{box-sizing:border-box}
+body{--acc:#3cc4b9;--soft:color-mix(in srgb,var(--acc) 11%,var(--card));margin:0;color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;background:radial-gradient(900px 440px at 50% -140px,color-mix(in srgb,var(--acc) 12%,transparent),transparent),var(--bg);background-repeat:no-repeat;min-height:100vh}
+body[data-s=mat]{--acc:#5b8def}body[data-s=fis]{--acc:#e6a23c}body[data-s=qui]{--acc:#a46cef}body[data-s=bio]{--acc:#82d45e}body[data-s=sisu]{--acc:#e85d9f}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px 70px}
+header{padding:60px 0 30px;text-align:center}
+.badge{display:inline-block;border:1px solid var(--acc);color:var(--acc);font-weight:700;font-size:13px;padding:6px 16px;border-radius:99px}
+h1{font-size:clamp(32px,7vw,54px);margin:18px 0 10px;font-weight:800;letter-spacing:-.025em;line-height:1.08}
+header p{color:var(--mute);max-width:540px;margin:0 auto;font-size:16px}
+.score{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin:6px 0 14px;font-size:14px;font-weight:700}
+.bar{flex:1;height:8px;background:var(--line);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--acc);border-radius:9px;transition:width .4s}
+.tabs{display:flex;gap:6px;background:rgba(12,17,36,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);padding:6px;border-radius:18px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:5;overflow-x:auto}
+.tab{flex:1;white-space:nowrap;border:0;background:none;color:var(--mute);font:inherit;font-weight:700;font-size:14px;padding:11px 14px;border-radius:12px;cursor:pointer;transition:color .15s,background .15s}
+.tab:hover{color:var(--ink)}.tab:focus-visible,.opt:focus-visible,.pre:focus-visible,.step button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.tab.on{background:var(--acc);color:#04060d}
+h2{font-size:22px;margin:34px 0 14px;letter-spacing:-.01em}
+.lead{color:var(--mute);margin:-4px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.box h3{margin:0 0 10px;font-size:15px}
+.fr{margin:10px 0;font-size:13px}.fr div{display:flex;justify-content:space-between;color:var(--mute);font-weight:600}
+.fr .b{height:8px;background:var(--line);border-radius:9px;margin-top:4px}.fr .b i{display:block;height:100%;border-radius:9px}
+.src{font-size:12.5px;color:var(--mute);margin-top:12px}
+.day{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 16px;margin-bottom:9px;cursor:pointer}
+.day input{margin-top:6px;width:18px;height:18px;accent-color:var(--acc)}
+.day b{display:block}.day small{color:var(--mute)}.day.d{opacity:.5}.day.d b{text-decoration:line-through}
+details{background:var(--card);border:1px solid var(--line);border-radius:20px;margin-bottom:14px;overflow:hidden;transition:border-color .2s}
+details[open]{border-color:color-mix(in srgb,var(--acc) 55%,var(--line))}
+summary{cursor:pointer;list-style:none;padding:17px 20px;display:flex;align-items:center;gap:12px;font-weight:800;font-size:17px}
+summary::-webkit-details-marker{display:none}summary::after{content:"＋";margin-left:auto;color:var(--acc);font-size:20px}details[open] summary::after{content:"－"}
+.pill{font-size:11.5px;font-weight:700;padding:3px 11px;border-radius:99px;background:var(--soft);color:var(--acc);white-space:nowrap;border:1px solid color-mix(in srgb,var(--acc) 40%,transparent)}
+.in{padding:0 20px 20px}
+.theory{background:var(--soft);border-radius:14px;padding:15px 17px;font-size:15px}
+.theory p{margin:0 0 8px}.theory p:last-child{margin:0}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:12px 0}
+.chip{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:12.5px;color:var(--mute);font-weight:600}
+.chip code{display:block;font-size:15px;color:var(--acc);font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
+.tip{font-size:14px;border-left:3px solid var(--acc);padding:8px 14px;margin:10px 0 16px;background:var(--card2);border-radius:0 12px 12px 0}
+.q{border-top:1px solid var(--line);padding-top:18px;margin-top:16px}
+.q .n{font-size:13px;font-weight:800;color:var(--acc)}
+.q p.s{margin:4px 0 12px;font-weight:500}
+.opt{display:flex;gap:12px;width:100%;text-align:left;background:var(--card2);border:1.5px solid var(--line);color:var(--ink);font:inherit;font-size:15px;padding:11px 15px;border-radius:13px;margin-bottom:7px;cursor:pointer;transition:border-color .15s}
+.opt:hover:not(:disabled){border-color:var(--acc)}.opt b{color:var(--acc);min-width:16px}
+.opt.ok{background:color-mix(in srgb,var(--ok) 14%,var(--card));border-color:var(--ok)}.opt.bad{background:color-mix(in srgb,var(--bad) 14%,var(--card));border-color:var(--bad)}.opt:disabled{cursor:default}
+.sol{display:none;margin-top:12px;border-left:3px solid var(--acc);background:var(--soft);border-radius:0 14px 14px 0;padding:15px 17px;font-size:15px}
+.sol.show{display:block}.sol h4{margin:0 0 6px;font-size:13px;color:var(--acc)}
+.sol ol{margin:0;padding-left:20px}.sol li{margin-bottom:4px}.res{font-weight:800;margin:0 0 8px}.res.ok{color:var(--ok)}.res.bad{color:var(--bad)}.trap{margin:8px 0 0;font-size:14px;color:var(--mute)}
+footer{text-align:center;color:var(--mute);font-size:13px;margin-top:40px}
+/* calculadora SISU */
+.presets,.ed{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}.ed{margin:14px 0 0}
+.pre{font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--card2);border:1px solid var(--line);padding:8px 14px;border-radius:99px;cursor:pointer}
+.pre:hover,.pre.on{border-color:var(--acc);color:var(--acc)}
+.ar{padding:14px 0;border-top:1px solid var(--line)}.ar:first-child{border-top:0;padding-top:0}
+.ar-h{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.step{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);font-weight:600}
+.step button{width:32px;height:32px;border-radius:10px;border:1px solid var(--line);background:var(--card2);color:var(--ink);font:inherit;font-size:17px;cursor:pointer}
+.step button:hover{border-color:var(--acc);color:var(--acc)}.step output{min-width:34px;text-align:center;font-weight:800;font-size:18px;color:var(--acc)}
+.ns{display:flex;gap:10px;flex-wrap:wrap}.ns label,.fld{display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--mute);font-weight:600;flex:1;min-width:130px}
+input[inputmode]{font:inherit;font-size:17px;font-weight:700;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:10px 13px;width:100%}
+input[inputmode]:focus{outline:0;border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 25%,transparent)}
+.two{margin:12px 0}.two .fld{min-width:0}
+.big{font-size:clamp(44px,12vw,72px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--acc)}
+.res{border-color:color-mix(in srgb,var(--acc) 50%,var(--line))}
+.res .meta{color:var(--mute);font-size:14px;margin:8px 0 14px}
+.res .msg{font-weight:800;margin:0 0 14px}.msg.ok{color:var(--ok)}.msg.bad{color:var(--bad)}
+.ct{display:grid;grid-template-columns:1fr auto;gap:2px 12px;font-size:13.5px;margin:9px 0}.ct span{color:var(--mute);font-weight:600}.ct b{text-align:right}
+.ct i{grid-column:1/-1;height:7px;border-radius:9px;background:var(--acc)}
+.eds{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.eds .pre{cursor:default}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><span class="badge">ENEM · 2º dia · Exatas e Natureza</span>
+<h1>Resumo e Dicas para Exatas</h1>
+<p>Os temas que mais caem em Matemática, Física e Química, com teoria curta, fórmulas, dicas, questões resolvidas e uma calculadora da média do SISU.</p></header>
+<div class="score"><span id="sc"></span><div class="bar"><i id="pb"></i></div><span id="pc"></span></div>
+<p class="src" id="saveStatus" role="status" aria-live="polite">Seu progresso será salvo automaticamente neste dispositivo.</p>
+<nav class="tabs" id="tabs"></nav>
+<main id="main"></main>
+<footer>Estratégia: leia a teoria, tente a questão sem olhar, confira a resolução e refaça as que errou. 💪</footer>
+</div>
+<script>
+var L="ABCDE";
+var FR=[["📐 Matemática",["Aritmética e matemática básica|37","Estatística|14","Funções|10","Geometria espacial|7","Geometria plana|7"],"var(--c1)"],["⚡ Física",["Mecânica e cinemática|30","Eletricidade (eletrodinâmica)|22","Ondulatória|16","Termologia|15"],"var(--c2)"],["🧪 Química",["Físico-química|28","Química geral|27","Orgânica|18","Ambiental|11"],"var(--c3)"],["🧬 Biologia",["Ecologia|26","Fisiologia humana|15","Citologia e genética|12","Evolução|8"],"var(--c4)"]];
+var PLANO=[["Segunda","Matemática básica","Porcentagem, juros, razão, proporção e escala (o tema nº 1 da prova)"],["Terça","Estatística + Probabilidade","Média, moda, mediana, probabilidade e contagem"],["Quarta","Geometria + Funções","Áreas, volumes, Pitágoras e função afim"],["Quinta","Física: Eletrodinâmica + Termologia","Consumo, resistores, calorimetria"],["Sexta","Física: Mecânica + Ondas","Velocidade média, Newton, v = λ·f"],["Sábado","Química: Estequiometria, Soluções, pH","Mol, molaridade, diluição, escala de pH"],["Domingo","Eletroquímica, Orgânica, Termoquímica","Pilhas, funções orgânicas, ΔH e revisão geral"],["Bônus diário","Biologia: Ecologia, Fisiologia, Genética, Evolução","30 min por dia ao longo da semana. Ecologia é o tema nº 1 da Biologia"]];
+var D=[
+{id:"mat",nome:"📐 Matemática",t:[
+{n:"Estatística: média, moda e mediana",f:"🔥 Muito alta",th:["<b>Média</b>: soma ÷ quantidade. Na <b>ponderada</b>, cada valor é multiplicado pelo seu peso.","<b>Moda</b>: o valor que mais se repete (pode haver mais de uma ou nenhuma).","<b>Mediana</b>: valor central com os dados em ordem. Se a quantidade for par, é a média dos dois centrais."],fo:[["Média","soma ÷ n"],["Média ponderada","Σ(valor · peso) ÷ Σ pesos"],["Mediana (n par)","(central 1 + central 2) ÷ 2"]],tip:"A média é puxada por valores extremos; a mediana não. Por isso, em salários, a mediana representa melhor.",q:[
+["Em uma prova com pesos, um aluno tirou 6 na prova de peso 2 e 8 na prova de peso 3. Qual é sua média ponderada?",["7,0","7,2","7,5","6,8","8,0"],1,["Multiplique cada nota pelo peso: 6 · 2 = 12 e 8 · 3 = 24.","Some: 12 + 24 = <b>36</b>. Some os pesos: 2 + 3 = <b>5</b>.","Média = 36 ÷ 5 = <b>7,2</b>."],"A média simples daria 7,0. O peso muda o resultado."],
+["Os tamanhos de calçado vendidos em um dia foram 36, 37, 37, 38, 38, 38 e 40. Qual é a moda?",["37","38","39","40","36"],1,["Conte as repetições: 36 (1), 37 (2), 38 (3), 40 (1).","O que mais se repete é o <b>38</b>."],"Moda é um valor dos dados, não uma quantidade de repetições (o 3 não é a moda)."],
+["As idades de um grupo são 3, 7, 7, 8, 10 e 13 anos. Qual é a mediana?",["7","7,5","8","8,5","10"],1,["Os dados já estão em ordem crescente.","Há 6 valores (par): use os dois centrais, 7 e 8.","(7 + 8) ÷ 2 = <b>7,5</b>."],"Se os dados não estiverem em ordem, ordene antes."]]},
+{n:"Porcentagem e juros",f:"🔥 Muito alta",th:["<b>Aumento</b> de i%: multiplique por (1 + i). <b>Desconto</b> de i%: multiplique por (1 − i).","Variações sucessivas <b>se multiplicam</b>, nunca se somam.","<b>Juros compostos</b> incidem sobre o valor já acrescido dos juros."],fo:[["Aumento de 20%","× 1,20"],["Desconto de 20%","× 0,80"],["Juros compostos","M = C · (1 + i)ᵗ"]],tip:"Sempre transforme a porcentagem em número decimal antes de calcular: 15% = 0,15.",q:[
+["Um produto custa R$ 200,00. Teve aumento de 20% e depois desconto de 20%. Qual o preço final?",["R$ 200,00","R$ 192,00","R$ 196,00","R$ 180,00","R$ 240,00"],1,["Aumento: 200 · 1,20 = <b>240</b>.","Desconto: 240 · 0,80 = <b>192</b>."],"+20% e −20% não se anulam: as bases são diferentes."],
+["Uma aplicação de R$ 1.000,00 rende 10% ao mês a juros compostos. Qual o montante após 2 meses?",["R$ 1.100,00","R$ 1.200,00","R$ 1.210,00","R$ 1.220,00","R$ 1.331,00"],2,["M = C · (1 + i)ᵗ = 1000 · 1,10².","1,10² = <b>1,21</b>.","M = <b>R$ 1.210,00</b>."],"Juros simples dariam 1.200. No composto, o 2º mês rende sobre 1.100."]]},
+{n:"Razão, proporção, regra de três e escala",f:"🔥 Muito alta",th:["<b>Razão</b> é a divisão entre duas grandezas. <b>Proporção</b> é a igualdade entre duas razões.","Grandezas <b>diretamente</b> proporcionais: multiplique em cruz. <b>Inversamente</b>: multiplique em linha.","<b>Escala</b> = medida no desenho ÷ medida real (mesma unidade)."],fo:[["Escala 1 : 50.000","1 cm no mapa = 50.000 cm reais"],["Conversões","1 km = 100.000 cm"]],tip:"Em escala, converta tudo para a mesma unidade antes de dividir.",q:[
+["Em um mapa de escala 1 : 50.000, a distância entre duas cidades é 4 cm. Qual a distância real?",["0,2 km","2 km","20 km","200 m","4 km"],1,["Real = 4 · 50.000 = <b>200.000 cm</b>.","200.000 cm ÷ 100.000 = <b>2 km</b>."],"Erro comum: esquecer de converter cm para km."]]},
+{n:"Probabilidade e análise combinatória",f:"🔥 Alta",th:["<b>Probabilidade</b> = casos favoráveis ÷ casos possíveis.","Eventos sucessivos (“e”): <b>multiplica</b>. Alternativos (“ou”): <b>soma</b>.","<b>Princípio fundamental da contagem</b>: multiplique as escolhas de cada etapa."],fo:[["Probabilidade","P = favoráveis ÷ possíveis"],["Sem reposição","o total diminui a cada retirada"]],tip:"Se a ordem importa (senhas, filas), é arranjo. Se não importa (comissões), é combinação.",q:[
+["Uma urna tem 5 bolas vermelhas e 3 azuis. Retiram-se 2 bolas, sem reposição. Qual a probabilidade de ambas serem vermelhas?",["5/14","25/64","5/8","1/2","3/14"],0,["1ª vermelha: 5/8. Restam 4 vermelhas em 7: 4/7.","5/8 · 4/7 = 20/56 = <b>5/14</b>."],"Com reposição seria 25/64."],
+["Quantas senhas de 3 dígitos distintos podem ser formadas com os algarismos de 0 a 9?",["300","504","720","900","1.000"],2,["1º dígito: 10 opções. 2º: 9. 3º: 8.","10 · 9 · 8 = <b>720</b>."],"“Distintos” elimina repetição; sem essa restrição seriam 1.000."]]},
+{n:"Geometria plana e espacial",f:"🔥 Alta",th:["<b>Pitágoras</b> (triângulo retângulo): a² = b² + c².","Volumes: prisma = área da base · altura. Cilindro = πr²h.","<b>1 m³ = 1.000 L</b> e 1 dm³ = 1 L."],fo:[["Pitágoras","a² = b² + c²"],["Cilindro","V = π · r² · h"],["Círculo","A = π · r²"]],tip:"Desenhe a figura e marque os dados. Cuidado com unidades: m, cm, m³, litros.",q:[
+["Uma escada de 5 m está apoiada em uma parede e sua base fica a 3 m da parede. A que altura da parede a escada toca?",["2 m","3 m","4 m","5 m","6 m"],2,["A escada é a hipotenusa: 5² = h² + 3².","25 = h² + 9, então h² = 16.","h = <b>4 m</b>."],"Trio pitagórico clássico: 3, 4, 5."],
+["Uma caixa-d’água cilíndrica tem 1 m de raio e 2 m de altura. Com π = 3, quantos litros ela comporta?",["600 L","2.000 L","3.000 L","6.000 L","18.000 L"],3,["V = π · r² · h = 3 · 1 · 2 = <b>6 m³</b>.","6 · 1.000 = <b>6.000 L</b>."],"Erro clássico: esquecer a conversão de m³ para litros."]]},
+{n:"Funções (1º e 2º grau)",f:"🔶 Média-alta",th:["<b>Função afim</b>: f(x) = ax + b. “a” é a taxa de variação (por km, por hora…); “b” é o valor inicial (bandeirada, taxa fixa).","<b>Função quadrática</b>: f(x) = ax² + bx + c, gráfico em parábola; vértice dá o máximo ou o mínimo."],fo:[["Função afim","y = ax + b"],["Vértice (x)","xᵥ = −b ÷ 2a"]],tip:"Em problemas de contexto, ache o “valor fixo” (b) e o “valor que muda” (a).",q:[
+["Uma corrida de táxi custa R$ 5,00 de bandeirada mais R$ 2,00 por km. Quanto custa uma corrida de 12 km?",["R$ 24,00","R$ 26,00","R$ 29,00","R$ 34,00","R$ 17,00"],2,["Função: C(x) = 2x + 5.","C(12) = 2 · 12 + 5 = 24 + 5 = <b>R$ 29,00</b>."],"A bandeirada é cobrada uma única vez."]]}
+]},
+{id:"fis",nome:"⚡ Física",t:[
+{n:"Eletrodinâmica",f:"🔥 Muito alta",th:["<b>Potência</b>: P = U · i. <b>Energia</b>: E = P · t (em kWh, use kW e horas).","<b>1ª Lei de Ohm</b>: U = R · i.","Resistores em <b>série</b> somam: R = R₁ + R₂. Em <b>paralelo</b>: 1/R = 1/R₁ + 1/R₂ (produto ÷ soma para dois resistores)."],fo:[["Ohm","U = R · i"],["Energia","E (kWh) = P (kW) · t (h)"],["Paralelo (2 resistores)","R = (R₁·R₂) ÷ (R₁+R₂)"]],tip:"Converta W em kW (÷ 1000) e minutos em horas. A conta de luz cobra kWh.",q:[
+["Um chuveiro de 5.000 W é usado 30 min por dia durante 30 dias. Com o kWh a R$ 0,80, qual o custo mensal?",["R$ 30,00","R$ 45,00","R$ 60,00","R$ 75,00","R$ 90,00"],2,["5.000 W = <b>5 kW</b>. Tempo: 0,5 h · 30 = <b>15 h</b>.","E = 5 · 15 = <b>75 kWh</b>.","Custo = 75 · 0,80 = <b>R$ 60,00</b>."],"75 é a energia em kWh, não o valor em reais."],
+["Dois resistores de 6 Ω e 3 Ω estão ligados em paralelo a uma fonte de 12 V. Qual a corrente total?",["2 A","3 A","4 A","6 A","9 A"],3,["R equivalente = (6 · 3) ÷ (6 + 3) = 18 ÷ 9 = <b>2 Ω</b>.","i = U ÷ R = 12 ÷ 2 = <b>6 A</b>."],"No paralelo, a resistência equivalente é menor que a menor das resistências."]]},
+{n:"Termologia e calorimetria",f:"🔥 Alta",th:["<b>Calor sensível</b> (muda a temperatura): Q = m · c · ΔT.","<b>Equilíbrio térmico</b>: o calor cedido por um corpo é recebido pelo outro, então a soma dos Q é zero.","Calor flui do corpo mais quente para o mais frio."],fo:[["Calor sensível","Q = m · c · ΔT"],["Água","c = 1 cal/g·°C"],["Equilíbrio","ΣQ = 0"]],tip:"ΔT é temperatura final menos inicial, nunca só a final.",q:[
+["Qual a quantidade de calor para aquecer 500 g de água de 20 °C a 80 °C? (c = 1 cal/g·°C)",["10.000 cal","25.000 cal","30.000 cal","40.000 cal","50.000 cal"],2,["ΔT = 80 − 20 = <b>60 °C</b>.","Q = 500 · 1 · 60 = <b>30.000 cal</b>."],"Use a variação de temperatura."],
+["Misturam-se 100 g de água a 80 °C com 100 g de água a 20 °C. Qual a temperatura final de equilíbrio?",["40 °C","50 °C","60 °C","70 °C","100 °C"],1,["Massas e calor específico iguais: a temperatura final é a média.","(80 + 20) ÷ 2 = <b>50 °C</b>."],"Se as massas fossem diferentes, seria preciso usar ΣQ = 0."]]},
+{n:"Ondulatória e som",f:"🔥 Alta",th:["<b>Equação fundamental</b>: v = λ · f.","A frequência é característica da fonte e não muda ao trocar de meio; velocidade e comprimento de onda mudam.","Som é onda <b>mecânica</b> e longitudinal (precisa de meio). Luz é onda eletromagnética."],fo:[["Onda","v = λ · f"],["Período","T = 1 ÷ f"]],tip:"Frequência em hertz (Hz) e comprimento de onda em metros dão velocidade em m/s.",q:[
+["Uma onda sonora tem frequência de 340 Hz e se propaga no ar a 340 m/s. Qual o comprimento de onda?",["0,5 m","1 m","2 m","340 m","115.600 m"],1,["v = λ · f, então λ = v ÷ f.","λ = 340 ÷ 340 = <b>1 m</b>."],"Isole o λ com cuidado: λ = v ÷ f, não f ÷ v."]]},
+{n:"Mecânica e cinemática",f:"🔥 Muito alta",th:["<b>Velocidade média</b> = distância total ÷ tempo total.","<b>2ª lei de Newton</b>: F = m · a.","<b>Energia</b> se conserva; cinética Ec = m·v²/2."],fo:[["Velocidade média","Vm = Δs ÷ Δt"],["Newton","F = m · a"],["Cinética","Ec = m · v² ÷ 2"]],tip:"Velocidade média NÃO é a média das velocidades.",q:[
+["Um carro percorre 60 km a 60 km/h e depois 60 km a 120 km/h. Qual a velocidade média?",["80 km/h","90 km/h","85 km/h","100 km/h","75 km/h"],0,["1º trecho: 60 ÷ 60 = <b>1 h</b>. 2º: 60 ÷ 120 = <b>0,5 h</b>.","Vm = 120 ÷ 1,5 = <b>80 km/h</b>."],"Fazer (60 + 120) ÷ 2 = 90 é a pegadinha."],
+["Sobre um corpo de 10 kg atua uma força resultante de 50 N. Qual a aceleração?",["0,2 m/s²","5 m/s²","40 m/s²","60 m/s²","500 m/s²"],1,["F = m · a, então a = F ÷ m.","a = 50 ÷ 10 = <b>5 m/s²</b>."],"Massa em kg e força em N dão aceleração em m/s²."]]}
+]},
+{id:"qui",nome:"🧪 Química",t:[
+{n:"Estequiometria e mol",f:"🔥 Muito alta",th:["<b>1 mol</b> = massa molar em gramas (ex.: CO₂ = 44 g/mol).","Os <b>coeficientes</b> da equação balanceada dão a proporção em mols.","Roteiro: massa → mol → proporção da equação → massa."],fo:[["Mols","n = m ÷ M"],["Constante de Avogadro","6 · 10²³ entidades/mol"]],tip:"Antes de calcular, verifique se a equação está balanceada.",q:[
+["Quantos gramas há em 0,5 mol de CO₂? (C = 12; O = 16)",["11 g","22 g","44 g","88 g","6 g"],1,["M(CO₂) = 12 + 2 · 16 = <b>44 g/mol</b>.","m = n · M = 0,5 · 44 = <b>22 g</b>."],"44 g seria 1 mol inteiro."],
+["Na reação 2 H₂ + O₂ → 2 H₂O, quantos gramas de água se formam a partir de 4 g de H₂? (H = 1; O = 16)",["18 g","36 g","72 g","4 g","32 g"],1,["4 g de H₂ ÷ 2 g/mol = <b>2 mol</b> de H₂.","Proporção 2 : 2, logo 2 mol de H₂O.","M(H₂O) = 18, então 2 · 18 = <b>36 g</b>."],"A proporção vem dos coeficientes, não das massas."]]},
+{n:"Soluções e concentração",f:"🔥 Alta",th:["<b>Molaridade</b> M = n ÷ V (litros).","<b>Diluição</b>: a quantidade de soluto não muda, então M₁·V₁ = M₂·V₂.","Concentração comum: C = massa do soluto ÷ volume (g/L)."],fo:[["Molaridade","M = n ÷ V(L)"],["Diluição","M₁ · V₁ = M₂ · V₂"]],tip:"Volume sempre em litros. 500 mL = 0,5 L.",q:[
+["Dissolvem-se 40 g de NaOH (M = 40 g/mol) em água até completar 2 L. Qual a concentração em mol/L?",["0,25","0,50","1,0","2,0","20"],1,["n = 40 ÷ 40 = <b>1 mol</b>.","M = 1 ÷ 2 = <b>0,5 mol/L</b>."],"Dividir pela massa em vez de pelos mols é o erro mais comum."],
+["100 mL de solução 2 mol/L são diluídos até 400 mL. Qual a nova concentração?",["0,25 mol/L","0,5 mol/L","1 mol/L","4 mol/L","8 mol/L"],1,["M₁V₁ = M₂V₂ → 2 · 100 = M₂ · 400.","M₂ = 200 ÷ 400 = <b>0,5 mol/L</b>."],"Diluir sempre diminui a concentração."]]},
+{n:"pH e equilíbrio ácido-base",f:"🔥 Alta",th:["<b>pH = −log[H⁺]</b>. Ácido: pH &lt; 7. Neutro: 7. Básico: &gt; 7.","Escala <b>logarítmica</b>: cada unidade de pH muda [H⁺] em 10 vezes.","pH + pOH = 14 (a 25 °C)."],fo:[["pH","−log [H⁺]"],["[H⁺] = 10⁻³","pH = 3"]],tip:"Diferença de n unidades no pH = 10ⁿ vezes na acidez.",q:[
+["Uma solução tem pH 3 e outra tem pH 5. Quantas vezes a primeira é mais ácida que a segunda?",["2 vezes","10 vezes","100 vezes","1.000 vezes","3 vezes"],2,["A escala é logarítmica: 1 unidade = 10 vezes.","Diferença de 2 unidades: 10² = <b>100 vezes</b>."],"Diferença de pH 2 não significa 2 vezes."]]},
+{n:"Eletroquímica: pilhas",f:"🔶 Média-alta",th:["Na pilha ocorre reação espontânea que gera corrente.","<b>Ânodo</b>: onde ocorre <b>oxidação</b> (perde elétrons), polo negativo. <b>Cátodo</b>: <b>redução</b>, polo positivo.","Os elétrons vão do ânodo para o cátodo pelo fio. A ponte salina equilibra as cargas."],fo:[["Mnemônico","Oxidação no Ânodo (vogais)"],["Pilha de Daniell","Zn | Zn²⁺ ∥ Cu²⁺ | Cu"]],tip:"O metal mais reativo (maior tendência a oxidar) vira o ânodo.",q:[
+["Na pilha de Daniell (Zn e Cu), qual eletrodo sofre oxidação e qual é o seu polo?",["Zn: ânodo, polo negativo","Cu: ânodo, polo negativo","Zn: cátodo, polo positivo","Cu: cátodo, polo negativo","Zn: ânodo, polo positivo"],0,["O zinco é mais reativo que o cobre, então oxida: Zn → Zn²⁺ + 2 e⁻.","Onde há oxidação é o <b>ânodo</b>, e na pilha o ânodo é o <b>polo negativo</b>."],"Em eletrólise as polaridades se invertem; em pilha, ânodo é negativo."]]},
+{n:"Química orgânica: funções",f:"🔥 Alta",th:["Reconheça pelo <b>grupo funcional</b>: álcool (–OH), aldeído (–CHO), cetona (C=O no meio), ácido carboxílico (–COOH), éster (–COO–), amina (–NH₂), éter (–O–).","Cadeias: saturada (só ligação simples), insaturada (dupla/tripla), aromática (anel benzênico)."],fo:[["Ácido carboxílico","R – COOH"],["Álcool","R – OH"]],tip:"Nomes de uso comum caem muito: vinagre (ácido acético), etanol (álcool), acetona (cetona).",q:[
+["O vinagre contém ácido acético (CH₃COOH). Qual a função orgânica presente?",["Álcool","Aldeído","Cetona","Ácido carboxílico","Éster"],3,["O grupo <b>–COOH</b> caracteriza os ácidos carboxílicos.","Está no próprio nome: ácido acético."],"Não confunda –OH (álcool) com –COOH."]]},
+{n:"Termoquímica",f:"🔶 Média-alta",th:["<b>ΔH &lt; 0</b>: reação exotérmica (libera calor). <b>ΔH &gt; 0</b>: endotérmica (absorve calor).","O ΔH é proporcional à quantidade de mols que reagem."],fo:[["Exotérmica","ΔH < 0"],["Proporcionalidade","ΔH total = n · ΔH"]],tip:"Combustão é sempre exotérmica.",q:[
+["A combustão do metano libera 890 kJ por mol (ΔH = −890 kJ/mol). Qual a energia liberada na queima de 2 mol?",["445 kJ","890 kJ","1.780 kJ","2.670 kJ","−890 kJ"],2,["Energia é proporcional aos mols.","2 · 890 = <b>1.780 kJ liberados</b>."],"O sinal negativo indica liberação, não valor negativo de energia útil."]]}
+]},
+{id:"bio",nome:"🧬 Biologia",t:[
+{n:"Ecologia e meio ambiente",f:"🔥 Muito alta",th:["<b>Cadeia alimentar</b>: produtores → consumidores → decompositores.","A <b>energia</b> flui em um só sentido e só cerca de <b>10%</b> passa de um nível trófico para o seguinte. Já a <b>matéria</b> é reciclada (ciclos do carbono, nitrogênio e água).","<b>Desequilíbrios</b>: eutrofização (excesso de nutrientes na água), espécies invasoras, desmatamento e <b>bioacumulação</b> (substância não degradável se concentra ao longo da cadeia)."],fo:[["Transferência de energia","≈ 10% por nível"],["Efeito estufa","CO₂ e CH₄ retêm calor"]],tip:"Ecologia é o tema mais cobrado de Biologia. Foque em cadeias, ciclos e impactos ambientais.",q:[
+["Os produtores de um ecossistema armazenam 10.000 kJ. Considerando 10% de transferência por nível, quanta energia chega ao consumidor secundário (3º nível: produtor → primário → secundário)?",["10 kJ","100 kJ","1.000 kJ","5.000 kJ","10.000 kJ"],1,["Produtor → consumidor primário: 10% de 10.000 = <b>1.000 kJ</b>.","Primário → secundário: 10% de 1.000 = <b>100 kJ</b>."],"A energia diminui muito a cada nível, por isso as cadeias são curtas."],
+["Um pesticida não degradável é lançado em um lago. Em qual organismo a concentração dele será maior?",["Algas (produtores)","Pequenos peixes herbívoros","Decompositores","Aves predadoras de topo","Na água do lago"],3,["A substância se acumula nos tecidos e não é eliminada.","A cada nível trófico, os animais ingerem muitos organismos contaminados, então a concentração aumenta.","O maior valor está no topo da cadeia: <b>aves predadoras</b>."],"Esse fenômeno chama-se bioacumulação (ou magnificação trófica)."]]},
+{n:"Fisiologia humana e saúde",f:"🔥 Alta",th:["<b>Circulação</b>: coração com 4 câmaras, circulação dupla (pulmonar e sistêmica). <b>Excreção</b>: rins filtram o sangue e formam a urina.","<b>Sistema endócrino</b>: hormônios regulam funções. A insulina (pâncreas) reduz a glicose no sangue.","<b>Imunidade</b>: vacinas estimulam a produção de anticorpos e de células de memória (imunização ativa)."],fo:[["Insulina","reduz a glicemia"],["Vacina","antígeno atenuado → memória"]],tip:"Questões de saúde pública (vacinas, saneamento, doenças) são recorrentes.",q:[
+["Qual é a principal função da insulina, hormônio produzido no pâncreas?",["Aumentar a glicose no sangue","Reduzir a glicose no sangue, favorecendo sua entrada nas células","Digerir proteínas no estômago","Filtrar o sangue nos rins","Aumentar a frequência cardíaca"],1,["A insulina é liberada quando a glicemia está alta, depois de comer.","Ela facilita a entrada de glicose nas células, <b>reduzindo a glicose no sangue</b>."],"O hormônio com efeito oposto é o glucagon."],
+["Como as vacinas protegem contra uma doença?",["Matam o agente infeccioso já instalado","Fornecem anticorpos prontos de outro organismo","Estimulam o sistema imune a produzir anticorpos e células de memória","Aumentam a temperatura do corpo","Substituem os glóbulos brancos"],2,["A vacina contém o agente atenuado ou parte dele (antígeno).","O corpo reage, produzindo anticorpos e <b>células de memória</b>."],"Soro fornece anticorpos prontos (imunização passiva); vacina treina o corpo."]]},
+{n:"Genética e citologia",f:"🔶 Média-alta",th:["<b>1ª lei de Mendel</b>: cada característica é determinada por um par de alelos que se separam na formação dos gametas.","Cruzamento <b>Aa × Aa</b>: 25% AA, 50% Aa, 25% aa. Ou seja, 75% de fenótipo dominante.","<b>Mitose</b>: gera células idênticas (crescimento). <b>Meiose</b>: gera gametas com metade dos cromossomos e variabilidade."],fo:[["Aa × Aa","1/4 AA · 2/4 Aa · 1/4 aa"],["Mitose × Meiose","idênticas × gametas"]],tip:"Genética é probabilidade: monte o quadro de Punnett e multiplique as chances.",q:[
+["Um casal heterozigoto (Aa) tem um filho. A condição albinismo é recessiva (aa). Qual a probabilidade de a criança ser albina?",["0","1/4","1/2","3/4","1"],1,["Cruzamento Aa × Aa: AA, Aa, Aa, aa.","Só um dos quatro resultados é aa: <b>1/4 (25%)</b>."],"Heterozigotos não são albinos, mas podem ter filhos albinos."]]},
+{n:"Evolução e seleção natural",f:"🔶 Média-alta",th:["<b>Seleção natural</b> (Darwin): existe variação entre indivíduos, parte dela é hereditária, e os mais adaptados deixam mais descendentes.","O ambiente <b>seleciona</b> características já existentes. Ele não cria mutações “de propósito”."],fo:[["Ideia central","variação + seleção + herança"]],tip:"Exemplo clássico no ENEM: bactérias resistentes a antibióticos.",q:[
+["O uso inadequado de antibióticos favorece o surgimento de bactérias resistentes. Segundo a seleção natural, isso ocorre porque:",["As bactérias decidem se adaptar ao remédio","O antibiótico causa mutações intencionais nas bactérias","As bactérias já resistentes sobrevivem, se reproduzem e passam a característica adiante","O organismo humano cria a resistência","Todas as bactérias morrem"],2,["Em uma população há variação: algumas bactérias já são naturalmente resistentes.","O antibiótico elimina as sensíveis. As <b>resistentes sobrevivem e se reproduzem</b>."],"Mutações surgem ao acaso; o ambiente apenas seleciona."]]}
+]}
+];
+var total=0;D.forEach(function(d){d.t.forEach(function(t){total+=t.q.length})});
+var cur="plano",hits=0,answered=0,done={},days={};
+var STORAGE_KEY="resumoExatas_estado_v1";
+function saveState(){
+ try{
+  localStorage.setItem(STORAGE_KEY,JSON.stringify({cur:cur,done:done,days:days,S:S}));
+  var status=document.getElementById("saveStatus");
+  if(status)status.textContent="✓ Progresso salvo automaticamente neste dispositivo.";
+ }catch(err){
+  var status=document.getElementById("saveStatus");
+  if(status)status.textContent="Não foi possível salvar. Verifique as configurações de armazenamento do navegador.";
+ }
+}
+function loadState(){
+ try{
+  var raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;
+  var data=JSON.parse(raw);if(!data||typeof data!=="object")return;
+  if(data.done&&typeof data.done==="object")done=data.done;
+  if(data.days&&typeof data.days==="object")days=data.days;
+  if(data.cur==="plano"||data.cur==="mat"||data.cur==="fis"||data.cur==="qui"||data.cur==="bio"||data.cur==="sisu")cur=data.cur;
+  if(data.S&&Array.isArray(data.S.w)&&Array.isArray(data.S.n)){
+   S.w=data.S.w.slice(0,5);S.ne=Math.min(3,Math.max(1,Number(data.S.ne)||1));
+   S.n=data.S.n.slice(0,3);while(S.n.length<3)S.n.push([]);
+   S.b=String(data.S.b||"");S.c=String(data.S.c||"");
+  }
+ }catch(err){console.warn("Não foi possível recuperar o progresso salvo.",err)}
+}
+function recalcScore(){
+ var keys=Object.keys(done);answered=keys.length;hits=0;
+ keys.forEach(function(key){var match=key.match(/^(mat|fis|qui|bio)(\d+)_(\d+)$/);if(!match)return;
+  var subject=D.filter(function(item){return item.id===match[1]})[0];
+  if(subject&&subject.t[+match[2]]&&subject.t[+match[2]].q[+match[3]]&&done[key]===subject.t[+match[2]].q[+match[3]][2])hits++;
+ });
+}
+var tabs=document.getElementById("tabs"),main=document.getElementById("main");
+function render(){
+var names=[["plano","🗓 Plano da semana"]].concat(D.map(function(d){return [d.id,d.nome]})).concat([["sisu","🎯 Média SISU"]]);document.body.dataset.s=cur;document.querySelector(".score").style.display=cur=="sisu"?"none":"";
+tabs.innerHTML=names.map(function(n){return '<button class="tab'+(n[0]==cur?' on':'')+'" data-i="'+n[0]+'">'+n[1]+'</button>'}).join("");
+if(cur=="plano"){
+main.innerHTML='<h2>📊 O que mais cai no ENEM</h2><div class="grid">'+FR.map(function(f){return '<div class="box"><h3>'+f[0]+'</h3>'+f[1].map(function(x){var p=x.split("|");return '<div class="fr"><div><span>'+p[0]+'</span><span>~'+p[1]+'%</span></div><div class="b"><i style="width:'+Math.min(100,p[1]*2.4)+'%;background:'+f[2]+'"></i></div></div>'}).join("")+'</div>'}).join("")+'</div><p class="src">Percentuais aproximados, compilados de levantamentos de plataformas como Estratégia, Toda Matéria e Vestibulando Web. Variam conforme o método, mas a ordem de prioridade é parecida.</p>'+
+'<h2>🗓 Plano de estudo em 7 dias</h2>'+PLANO.map(function(p,i){return '<label class="day'+(days[i]?' d':'')+'"><input type="checkbox" data-d="'+i+'"'+(days[i]?' checked':'')+'><span><b>'+p[0]+': '+p[1]+'</b><small>'+p[2]+'</small></span></label>'}).join("")+
+'<h2>🎯 Dicas para o dia da prova</h2><div class="grid"><div class="box"><h3>⏱ Tempo</h3>Cerca de 3 min por questão. Pule as que travarem e volte depois.</div><div class="box"><h3>📖 Leitura</h3>Sublinhe os dados e o que se pede. O ENEM cobra interpretação mais que conta.</div><div class="box"><h3>🧮 Unidades</h3>Converta tudo para a mesma unidade antes de calcular.</div><div class="box"><h3>🔍 Estimar</h3>Elimine alternativas absurdas por ordem de grandeza.</div></div>';
+}else if(cur=="sisu"){renderSisu()}else{
+var d=D.filter(function(x){return x.id==cur})[0];
+main.innerHTML=d.t.map(function(t,ti){return '<details'+(ti==0?' open':'')+'><summary>'+t.n+'<span class="pill">'+t.f+'</span></summary><div class="in"><div class="theory">'+t.th.map(function(x){return '<p>'+x+'</p>'}).join("")+'</div><div class="chips">'+t.fo.map(function(f){return '<div class="chip">'+f[0]+'<code>'+f[1]+'</code></div>'}).join("")+'</div><div class="tip">💡 '+t.tip+'</div>'+t.q.map(function(q,k){return '<div class="q" data-id="'+d.id+ti+'_'+k+'"><div class="n">Questão '+(k+1)+'</div><p class="s">'+q[0]+'</p>'+q[1].map(function(o,j){return '<button class="opt" data-t="'+ti+'" data-k="'+k+'" data-j="'+j+'"><b>'+L[j]+'</b><span>'+o+'</span></button>'}).join("")+'<div class="sol"></div></div>'}).join("")+'</div></details>'}).join("");
+d.t.forEach(function(t,ti){t.q.forEach(function(q,k){var r=done[d.id+ti+"_"+k];if(r!==undefined)reveal(d,ti,k,r)})});
+}}
+function reveal(d,ti,k,j){
+var q=d.t[ti].q[k],el=main.querySelector('[data-id="'+d.id+ti+'_'+k+'"]'),right=j===q[2];
+el.querySelectorAll(".opt").forEach(function(b,i){b.disabled=true;if(i===q[2])b.classList.add("ok");else if(i===j)b.classList.add("bad")});
+var s=el.querySelector(".sol");
+s.innerHTML='<p class="res '+(right?'ok':'bad')+'">'+(right?'✅ Correto!':'❌ Quase! O certo é a letra '+L[q[2]]+'.')+'</p><h4>Passo a passo</h4><ol>'+q[3].map(function(x){return '<li>'+x+'</li>'}).join("")+'</ol><p class="trap">⚠️ '+q[4]+'</p>';s.classList.add("show");
+}
+function upd(){recalcScore();var p=Math.round(hits/total*100);document.getElementById("sc").textContent=hits+" acertos de "+total+" questões · "+answered+" respondidas";document.getElementById("pb").style.width=p+"%";document.getElementById("pc").textContent=p+"%"}
+tabs.addEventListener("click",function(e){var b=e.target.closest(".tab");if(b){cur=b.dataset.i;saveState();render();window.scrollTo(0,0)}});
+main.addEventListener("click",function(e){var b=e.target.closest(".opt");if(!b||b.disabled)return;
+var d=D.filter(function(x){return x.id==cur})[0],ti=+b.dataset.t,k=+b.dataset.k,j=+b.dataset.j;done[d.id+ti+"_"+k]=j;reveal(d,ti,k,j);upd();saveState()});
+main.addEventListener("change",function(e){var c=e.target.closest("input[data-d]");if(c){days[c.dataset.d]=c.checked;c.closest(".day").classList.toggle("d",c.checked);saveState()}});
+
+var AR=[["Linguagens e Códigos"],["Ciências Humanas"],["Ciências da Natureza"],["Matemática"],["Redação"]];
+var PR={"Pesos iguais":[1,1,1,1,1],"Engenharia (exemplo)":[1,1,2,3,2],"Saúde (exemplo)":[2,1,3,2,2],"Humanas (exemplo)":[3,3,1,1,3]};
+var S={w:[1,1,1,1,1],ne:1,n:[[],[],[]],b:"",c:""};
+function wf(x){return String(x).replace(".",",")}
+function fmt(x){return x.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})}
+function pn(v,mx){var x=parseFloat(String(v).replace(",","."));return isNaN(x)?null:Math.min(mx,Math.max(0,x))}
+function renderSisu(){
+var h='<h2>🎯 Calculadora de média do SISU</h2><p class="lead">Digite suas notas do Enem e o peso que o curso dá a cada área. A média é a soma de nota × peso, dividida pela soma dos pesos.</p><div class="presets">'+Object.keys(PR).map(function(k){return '<button class="pre'+(PR[k].join()==S.w.join()?' on':'')+'" data-pre="'+k+'">'+k+'</button>'}).join("")+'</div><div class="box">';
+AR.forEach(function(a,i){
+h+='<div class="ar"><div class="ar-h"><b>'+a[0]+'</b><div class="step"><span>Peso</span><button data-w="'+i+'" data-d="-1" aria-label="Diminuir peso">−</button><output id="w'+i+'">'+wf(S.w[i])+'</output><button data-w="'+i+'" data-d="1" aria-label="Aumentar peso">＋</button></div></div><div class="ns">';
+for(var e=0;e<S.ne;e++)h+='<label>'+(S.ne>1?'Edição '+(e+1):'Sua nota')+'<input inputmode="decimal" data-e="'+e+'" data-a="'+i+'" value="'+(S.n[e][i]||'')+'" placeholder="0 a 1000"></label>';
+h+='</div></div>'});
+h+='<div class="ed">'+(S.ne<3?'<button class="pre" data-ed="1">＋ Comparar outra edição do Enem</button>':'')+(S.ne>1?'<button class="pre" data-ed="-1">Remover última edição</button>':'')+'</div></div>'+
+'<div class="grid two"><label class="box fld">Bônus da modalidade, em % (opcional)<input id="bn" inputmode="decimal" value="'+S.b+'" placeholder="0"></label><label class="box fld">Nota de corte do curso (opcional)<input id="cr" inputmode="decimal" value="'+S.c+'" placeholder="ex.: 720"></label></div>'+
+'<div class="box res" id="res"></div><p class="src">Os modelos de peso são exemplos. Os pesos reais variam por curso e campus: confira no portal do SISU ou no termo de adesão da instituição. Desde o SISU 2026, o sistema usa automaticamente a edição do Enem (entre as válidas) que gera a maior média ponderada em cada curso.</p>';
+main.innerHTML=h;calc()}
+function calc(){
+var sw=S.w.reduce(function(a,b){return a+b},0),bn=pn(S.b,100)||0,rows=[],best=-1;
+for(var e=0;e<S.ne;e++){var ok=true,sum=0,sp=0;for(var i=0;i<5;i++){var v=pn(S.n[e][i]||"",1000);if(v===null){ok=false;break}sum+=v*S.w[i];sp+=v}rows.push(ok?{m:sum/sw,s:sp/5}:null)}
+rows.forEach(function(r,e){if(r&&(best<0||r.m>rows[best].m))best=e});
+var el=document.getElementById("res");
+if(best<0){el.innerHTML='<p class="lead" style="margin:0">Preencha as cinco notas de uma edição para ver sua média.</p>';return}
+var r=rows[best],fin=r.m*(1+bn/100),cr=pn(S.c,2000),h='';
+if(S.ne>1)h+='<div class="eds">'+rows.map(function(x,e){return '<span class="pre'+(e==best?' on':'')+'">Edição '+(e+1)+': '+(x?fmt(x.m):'incompleta')+(e==best?' · vale':'')+'</span>'}).join("")+'</div>';
+h+='<div class="big">'+fmt(fin)+'</div><p class="meta">Média ponderada'+(bn?' com bônus de '+bn+'%':'')+'. Sem pesos, a média simples seria '+fmt(r.s)+(bn?'. Sem bônus: '+fmt(r.m):'')+'.</p>';
+if(cr!==null){var d=fin-cr;h+='<p class="msg '+(d>=0?'ok':'bad')+'">'+(d>=0?'Você está '+fmt(d)+' pontos acima da nota de corte.':'Faltam '+fmt(-d)+' pontos para a nota de corte.')+'</p>'}
+AR.forEach(function(a,i){var v=pn(S.n[best][i],1000),p=S.w[i]/sw*100;h+='<div class="ct"><span>'+a[0]+' · '+fmt(v)+' × peso '+wf(S.w[i])+'</span><b>'+fmt(p)+'% da média</b><i style="width:'+p+'%"></i></div>'});
+el.innerHTML=h}
+main.addEventListener("click",function(e){var b=e.target.closest("button");if(!b||cur!="sisu")return;
+if(b.dataset.pre){S.w=PR[b.dataset.pre].slice();renderSisu();saveState()}
+else if(b.dataset.ed){S.ne=Math.min(3,Math.max(1,S.ne+ +b.dataset.ed));renderSisu();saveState()}
+else if(b.dataset.w){var i=+b.dataset.w;S.w[i]=Math.min(5,Math.max(1,S.w[i]+0.5*(+b.dataset.d)));document.getElementById("w"+i).textContent=wf(S.w[i]);main.querySelectorAll("[data-pre]").forEach(function(p){p.classList.toggle("on",PR[p.dataset.pre].join()==S.w.join())});calc();saveState()}});
+main.addEventListener("input",function(e){var t=e.target;if(cur!="sisu")return;
+if(t.dataset.e!==undefined)S.n[+t.dataset.e][+t.dataset.a]=t.value;else if(t.id=="bn")S.b=t.value;else if(t.id=="cr")S.c=t.value;else return;calc();saveState()});
+loadState();recalcScore();render();upd();
+</script>
+</body>
+</html>
